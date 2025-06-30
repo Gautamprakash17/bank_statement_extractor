@@ -1,3 +1,6 @@
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+
 # Bank Statement Extractor
 
 A powerful and universal bank statement extractor that converts PDF bank statements into clean, structured CSV files. Supports multiple bank formats including SBI, HDFC, ICICI, and more.
