@@ -98,35 +98,19 @@ python main.py --pdf data/statement.pdf --output custom_output/
 
 ## 🏦 Supported Bank Formats
 
-### State Bank of India (SBI)
-- Multi-line transaction format
-- Traditional debit/credit columns
-- Date in parentheses format
+### ✅ Tested and Verified
+- **State Bank of India (SBI)**: Multi-line transaction format, traditional debit/credit columns, date in parentheses format
+- **Kotak Mahindra Bank**: Standard transaction format, date and value date columns, comprehensive narrative extraction
+- **Axis Bank**: Multiple statement layouts, advanced pattern matching, robust balance validation
 
-### HDFC Bank
-- Standard transaction format
-- Value date columns
-- Reference number support
+### 🔄 Theoretically Supported (Universal Patterns)
+- **HDFC Bank**: Standard transaction format, value date columns, reference number support
+- **ICICI Bank**: Multiple date formats, complex narrative extraction, balance verification
+- **Other Banks**: Automatic format detection with fallback parsing
 
-### ICICI Bank
-- Multiple date formats
-- Complex narrative extraction
-- Balance verification
-
-### Kotak Mahindra Bank
-- Standard transaction format
-- Date and value date columns
-- Comprehensive narrative extraction
-
-### Axis Bank
-- Multiple statement layouts
-- Advanced pattern matching
-- Robust balance validation
-
-### Universal Support
-- Automatic format detection
-- Fallback parsing for unknown formats
-- Multi-currency support (INR, USD, EUR, GBP)
+### 🌍 Multi-Currency Support
+- INR, USD, EUR, GBP with automatic detection
+- Universal parsing for unknown formats
 
 ## 🔧 Configuration
 
@@ -183,11 +167,9 @@ The extractor generates clean CSV files with the following columns:
 
 The extractor has been tested with:
 - **SBI Statements**: 240+ transactions extracted successfully
-- **HDFC Statements**: 262+ transactions with 100% accuracy
-- **ICICI Statements**: 179+ transactions processed
 - **Kotak Mahindra Bank**: Standard format with comprehensive extraction
 - **Axis Bank**: Multiple layouts with robust parsing
-- **Mixed Formats**: Universal parsing for unknown banks
+- **Universal Support**: Fallback parsing for other bank formats
 
 ## 📈 Performance
 
