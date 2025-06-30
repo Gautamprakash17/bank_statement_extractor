@@ -113,6 +113,16 @@ python main.py --pdf data/statement.pdf --output custom_output/
 - Complex narrative extraction
 - Balance verification
 
+### Kotak Mahindra Bank
+- Standard transaction format
+- Date and value date columns
+- Comprehensive narrative extraction
+
+### Axis Bank
+- Multiple statement layouts
+- Advanced pattern matching
+- Robust balance validation
+
 ### Universal Support
 - Automatic format detection
 - Fallback parsing for unknown formats
@@ -175,6 +185,8 @@ The extractor has been tested with:
 - **SBI Statements**: 240+ transactions extracted successfully
 - **HDFC Statements**: 262+ transactions with 100% accuracy
 - **ICICI Statements**: 179+ transactions processed
+- **Kotak Mahindra Bank**: Standard format with comprehensive extraction
+- **Axis Bank**: Multiple layouts with robust parsing
 - **Mixed Formats**: Universal parsing for unknown banks
 
 ## 📈 Performance
