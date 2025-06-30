@@ -240,3 +240,4 @@ For issues, questions, or contributions:
 ---
 
 **Note**: This tool is designed for personal and business use. Always ensure compliance with your bank's terms of service and data privacy regulations. # bank_statement_extractor
+# bank_statement_extractor
