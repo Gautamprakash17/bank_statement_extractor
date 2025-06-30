@@ -3,7 +3,9 @@
 
 # Bank Statement Extractor
 
-A powerful and universal bank statement extractor that converts PDF bank statements into clean, structured CSV files. Supports multiple bank formats including SBI, HDFC, ICICI, and more.
+**GitHub Repository:** [https://github.com/Gautamprakash17/bank_statement_extractor](https://github.com/Gautamprakash17/bank_statement_extractor)
+
+A powerful and universal bank statement extractor that converts PDF bank statements into clean, structured CSV files. Supports multiple bank formats including SBI, HDFC, ICICI, Kotak, Axis, and more.
 
 ## 🚀 Features
 
@@ -34,9 +36,12 @@ bank-statement-extractor/
 
 ## 🛠️ Installation
 
+**Repository URL:**
+[https://github.com/Gautamprakash17/bank_statement_extractor](https://github.com/Gautamprakash17/bank_statement_extractor)
+
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Gautamprakash17/bank_statement_extractor.git
    cd bank-statement-extractor
    ```
 
