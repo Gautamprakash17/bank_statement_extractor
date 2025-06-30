@@ -166,7 +166,7 @@ The extractor generates clean CSV files with the following columns:
 ## 🧪 Testing
 
 The extractor has been tested with:
-- **SBI Statements**: 240+ transactions extracted successfully
+- **SBI Statements**: Successfully extracted transactions with multi-line format support
 - **Kotak Mahindra Bank**: Standard format with comprehensive extraction
 - **Axis Bank**: Multiple layouts with robust parsing
 - **Universal Support**: Fallback parsing for other bank formats
