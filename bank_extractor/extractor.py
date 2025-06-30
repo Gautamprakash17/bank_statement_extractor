@@ -12,7 +12,7 @@ from datetime import datetime
 from typing import Dict, List, Optional, Tuple, Any
 
 from .config import ExtractorConfig
-from .parsers import SBIParser, UniversalParser
+from .parsers import SBIParser, UniversalParser, PNBParser
 from .validators import DataValidator
 
 logger = logging.getLogger(__name__)
@@ -25,6 +25,7 @@ class CompleteBankExtractor:
         self.config = ExtractorConfig()
         self.sbi_parser = SBIParser(self.config)
         self.universal_parser = UniversalParser(self.config)
+        self.pnb_parser = PNBParser(self.config)
         self.validator = DataValidator(self.config)
     
     def _detect_currency(self, text: str) -> Tuple[str, str]:
@@ -86,6 +87,11 @@ class CompleteBankExtractor:
                         continue
                     
                     lines = text.split('\n')
+                    # If PNB is detected in the file name or first page, use PNBParser
+                    if ("pnb" in base_name.lower()) or ("punjab national bank" in text.lower()):
+                        logger.info("Detected PNB statement, using PNBParser.")
+                        transactions.extend(self.pnb_parser.parse_pnb_transactions(lines))
+                        continue
                     i = 0
                     
                     while i < len(lines):

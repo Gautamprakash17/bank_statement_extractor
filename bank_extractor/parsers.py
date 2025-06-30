@@ -257,4 +257,38 @@ class UniversalParser(TransactionParser):
                         }
         except Exception as e:
             logger.debug(f"Enhanced fallback parsing failed: {e}")
-        return None 
+        return None
+
+class PNBParser(TransactionParser):
+    """Parser for Punjab National Bank statements with multi-line narration."""
+    def parse_pnb_transactions(self, lines: list) -> list:
+        import re
+        transactions = []
+        current_narration = []
+        for line in lines:
+            line = line.strip()
+            # Check for date at the start of the line
+            date_match = re.match(r'(\d{2}/\d{2}/\d{4})', line)
+            if date_match:
+                # If we have a previous narration, attach it to the last transaction
+                if current_narration and transactions:
+                    transactions[-1]['Narration'] += ' ' + ' '.join(current_narration)
+                    current_narration = []
+                # Extract amounts and balance
+                amounts = re.findall(r'[\d,]+\.\d{2}', line)
+                balance_match = re.search(r'([\d,]+\.\d{2})\s*Cr\.', line)
+                # Build transaction dict
+                transactions.append({
+                    'Date': date_match.group(1),
+                    'Withdrawal': amounts[0] if len(amounts) > 0 else '',
+                    'Deposit': amounts[1] if len(amounts) > 1 else '',
+                    'Balance': balance_match.group(1) if balance_match else '',
+                    'Narration': ''
+                })
+            else:
+                # If not a date line, treat as narration
+                current_narration.append(line)
+        # Attach any remaining narration
+        if current_narration and transactions:
+            transactions[-1]['Narration'] += ' ' + ' '.join(current_narration)
+        return transactions 
